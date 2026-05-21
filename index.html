@@ -1,49 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalev Public Group Inc.</title>
-  <link rel="icon" href="favicon KPG2.png" type="image/svg+xml" sizes="any">
+import React from "react";
+import { ArrowRight, ShieldCheck, PackageCheck, Globe2, FlaskConical } from "lucide-react";
 
-  <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      background: #030303;
-      font-family: Georgia, "Times New Roman", serif;
-      color: #e8e1d4;
+export default function KalevPublicGroupSite() {
+  const services = [
+    {
+      icon: <FlaskConical className="h-5 w-5" />,
+      title: "Healthcare Product Development",
+      text: "Select healthcare products for regulated markets."
+    },
+    {
+      icon: <Globe2 className="h-5 w-5" />,
+      title: "Strategic Sourcing",
+      text: "Manufacturing access and healthcare supply infrastructure."
+    },
+    {
+      icon: <ShieldCheck className="h-5 w-5" />,
+      title: "Regulatory Infrastructure",
+      text: "Pharmaceutical, clinical, and regulated market infrastructure."
+    },
+    {
+      icon: <PackageCheck className="h-5 w-5" />,
+      title: "Commercial Distribution",
+      text: "Wholesale, retail, and institutional market channels."
     }
+  ];
 
-    .top-left {
-      position: absolute;
-      top: 28px;
-      left: 32px;
-    }
+  return (
+    <main className="min-h-screen bg-[#F4F5F1] text-[#183028]">
+      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#5FAF86]/30 bg-[#0D5C53]/10 shadow-sm overflow-hidden">
+            <img
+              src="/favicon KPG1.png"
+              alt="Kalev Public Group logo"
+              className="h-full w-full object-contain p-1"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+                e.currentTarget.parentElement.innerHTML = '<span style="font-weight:700;font-size:12px;letter-spacing:.08em;color:#2F3A2F">KPG</span>';
+              }}
+            />
+          </div>
+          <div>
+            <p className="text-sm font-semibold tracking-[0.22em] text-[#0E4F47]">KALEV</p>
+            <p className="text-xs tracking-[0.18em] text-[#4F7C72]">PUBLIC GROUP</p>
+          </div>
+        </div>
 
-    .top-left p,
-    .top-left a {
-      margin: 0;
-      font-size: clamp(0.75rem, 1vw, 1rem);
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      line-height: 1.8;
-      text-transform: lowercase;
-      color: #e8e1d4;
-      text-decoration: none;
-    }
+        <a
+          href="mailto:info@kalevpublicgroup.com"
+          className="hidden rounded-full border border-[#5FAF86]/40 px-4 py-2 text-sm font-medium text-[#0E4F47] transition hover:bg-[#5FAF86]/20/40 sm:inline-flex"
+        >
+          Contact
+        </a>
+      </header>
 
-    .top-left a:hover {
-      opacity: 0.65;
-    }
-  </style>
-</head>
+      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.1fr_.9fr] md:items-center md:py-24">
+        <div>
+          <div className="mb-6 inline-flex rounded-full border border-[#C7D1C0] bg-white/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#4F7C72]">
+            Principal healthcare platform
+          </div>
+          <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.04em] text-[#1f241f] md:text-7xl">
+            Building healthcare products for regulated markets.
+          </h1>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#45655D]">
+            Kalev Public Group develops and commercializes select healthcare products for regulated wholesale and retail markets.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="mailto:info@kalevpublicgroup.com"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0D5C53] px-6 py-3 text-sm font-semibold text-[#F5F5F0] shadow-sm transition hover:bg-[#0A4A42]"
+            >
+              Start a conversation <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="#platform"
+              className="inline-flex items-center justify-center rounded-full border border-[#5FAF86]/40 px-6 py-3 text-sm font-semibold text-[#0E4F47] transition hover:bg-[#5FAF86]/20/35"
+            >
+              View platform
+            </a>
+          </div>
+        </div>
 
-<body>
-  <div class="top-left">
-    <p>stealth mode</p>
-    <a href="mailto:connect@kalevpublicgroup.com">connect@kalevpublicgroup.com</a>
-  </div>
-</body>
-</html>
+        <div className="rounded-[2rem] border border-[#C7D1C0] bg-[#0D5C53]/8 p-6 shadow-sm">
+          <div className="rounded-[1.5rem] border border-[#5FAF86]/40/60 bg-[#F5F5F0]/70 p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F7C72]">Operating focus</p>
+            <div className="mt-8 space-y-5">
+              {[
+                "OTC healthcare products",
+                "Product formulation and manufacturing",
+                "Regulated importation and storage readiness",
+                "Wholesale and retail market deployment",
+                "Clinical and pharmaceutical infrastructure"
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-[#6E846D]" />
+                  <p className="text-base text-[#0E4F47]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="platform" className="mx-auto max-w-6xl px-6 py-12">
+        <div className="mb-8 max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#4F7C72]">Platform</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-[#1f241f] md:text-4xl">
+            Built around healthcare product development and regulated infrastructure.
+          </h2>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-4">
+          {services.map((service) => (
+            <article key={service.title} className="rounded-[1.5rem] border border-[#D9D9D1] bg-white/60 p-5 shadow-sm">
+              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-2xl bg-[#5FAF86]/20 text-[#0E4F47]">
+                {service.icon}
+              </div>
+              <h3 className="text-base font-semibold text-[#1f241f]">{service.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-[#45655D]">{service.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="rounded-[2rem] bg-[#0D5C53] p-8 text-[#F5F5F0] md:p-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#C7D1C0]">Current direction</p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.03em] md:text-5xl">
+            A healthcare platform operating across regulated products, pharmaceutical infrastructure, and clinical market development.
+          </h2>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-[#D7E5DF]">
+            Long-term focus on healthcare products, market positioning, and regulated clinical-pharmaceutical operations.
+          </p>
+        </div>
+      </section>
+
+      <footer className="mx-auto flex max-w-6xl flex-col gap-4 border-t border-[#D9D9D1] px-6 py-8 text-sm text-[#4F7C72] md:flex-row md:items-center md:justify-between">
+        <p>© {new Date().getFullYear()} Kalev Public Group. All rights reserved.</p>
+        <p>Healthcare products · Clinical-pharmaceutical infrastructure · Regulated market development</p>
+      </footer>
+    </main>
+  );
+}
